@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 
 function Todolist(e) {
   const [listArray, setListArray] = useState([]);
+  useEffect(()=>{
+  console.log("i am useEffect Hooks");
+  
+},[])
   function addToDoItems(e) {
     e.preventDefault();
     let inputValue = e.target.inputValue.value;
@@ -32,7 +36,7 @@ function Todolist(e) {
               <button
                 type="button" className="deletebtn"
                 onClick={() => DeleteItem(index)}
-              ><i class="fa-solid fa-trash"></i></button>{" "}
+              ><i className="fa-solid fa-trash"></i></button>{" "}
             </li>
           ))}
         </ul>
